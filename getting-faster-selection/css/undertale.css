@@ -1,0 +1,15 @@
+@import url("webfont.css");
+
+html, body {
+	background-color: black;
+	color: white;
+	font-family: "Determination Sans", Fixedsys, sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+}
+
+@font-face {
+    font-family: 'Determination Sans';
+    src: url('DeterminationMonoWeb.woff') format('woff');
+}
