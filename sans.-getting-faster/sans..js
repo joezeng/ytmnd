@@ -1,5 +1,5 @@
-var bonetrousle = new Howl({
-	src: ["audio/bonetrousle.ogg"],
+var sans = new Howl({
+	src: ["audio/sans..ogg"],
 	loop: true,
 });
 
@@ -21,17 +21,17 @@ function update() {
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
 		rate += 0.01;
-		bonetrousle.rate(rate);
+		sans.rate(rate);
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%";
 	}
 
-	document.getElementById("papyrus").style.top = (rate - Math.random() * rate * 2) + "px";
-	document.getElementById("papyrus").style.left = (rate - Math.random() * rate * 2) + "px";
+	document.getElementById("sans").style.top = (rate - Math.random() * rate * 2) + "px";
+	document.getElementById("sans").style.left = (rate - Math.random() * rate * 2) + "px";
 	requestAnimationFrame(update);
 }
 
 function run() {
-	bonetrousle.play();
+	sans.play();
 	update_time = new Date();
 	requestAnimationFrame(update);
 }
