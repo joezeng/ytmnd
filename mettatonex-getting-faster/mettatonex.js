@@ -28,8 +28,8 @@ function update() {
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%";
 	}
 
-	document.getElementById("mettatonex").style.top = ((rate - Math.random() * rate * 2)+((divheight-500)/2)) + "px";
-	document.getElementById("mettatonex").style.left = ((rate - Math.random() * rate * 2)+((divwidth-500)/2)) + "px";
+	document.getElementById("mettatonex").style.top = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 2), -48), 48)+(divheight-500)/2) + "px";
+	document.getElementById("mettatonex").style.left = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 2), -48), 48)+(divwidth-500)/2) + "px";
 	requestAnimationFrame(update);
 }
 
