@@ -25,8 +25,8 @@ function update() {
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%";
 	}
 
-	document.getElementById("papyrus").style.top = (rate - Math.random() * rate * 2) + "px";
-	document.getElementById("papyrus").style.left = (rate - Math.random() * rate * 2) + "px";
+	document.getElementById("undyne").style.top = ((rate * 2) - Math.random() * rate * 4) + "px";
+	document.getElementById("undyne").style.left = ((rate * 2) - Math.random() * rate * 4) + "px";
 	requestAnimationFrame(update);
 }
 
