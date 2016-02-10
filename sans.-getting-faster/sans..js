@@ -1,5 +1,5 @@
 var sans = new Howl({
-	src: ["audio/sans..ogg"],
+	src: ["audio/sans..ogg", "audio/sans..mp3"],
 	loop: true,
 });
 

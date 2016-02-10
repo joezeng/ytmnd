@@ -1,5 +1,5 @@
 var tem = new Howl({
-	src: ["audio/temshop.ogg"],
+	src: ["audio/temshop.ogg", "audio/temshop.mp3"],
 	loop: true,
 });
 

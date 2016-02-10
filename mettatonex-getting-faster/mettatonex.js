@@ -1,5 +1,5 @@
 var mettatonex = new Howl({
-	src: ["audio/deathbyglamor.ogg"],
+	src: ["audio/deathbyglamor.ogg", "audio/deathbyglamor.mp3"],
 	loop: true,
 });
 

@@ -1,5 +1,5 @@
 var annoydog = new Howl({
-	src: ["audio/annoydog.ogg"],
+	src: ["audio/annoydog.ogg", "audio/annoydog.mp3"],
 	loop: true,
 });
 

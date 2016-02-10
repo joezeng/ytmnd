@@ -1,5 +1,5 @@
 var muffet = new Howl({
-	src: ["audio/spiderdance.ogg"],
+	src: ["audio/spiderdance.ogg", "audio/spiderdance.mp3"],
 	loop: true,
 });
 
