@@ -18,7 +18,7 @@ var loop = new Howl({
 
 
 var update_time = new Date();
-var percent_time = 60 / 173 / 4;
+var percent_time = 60 / 172.8 / 4;
 
 var ticks = 0;
 
