@@ -28,6 +28,17 @@ var rate = 1;
 var rate_timer = percent_time;
 
 
+
+function loading(ticks) {
+	if (ticks > 40) {
+		return 100;
+	} else {
+		var frac = ticks / 40
+		return (1 - Math.pow(1 - frac, 2)) * 100;
+	}
+}
+
+
 function update() {
 
 	var new_time = new Date();
@@ -42,26 +53,58 @@ function update() {
 		if (looping) {
 			rate += 0.0005;
 			loop.rate(rate);
-			document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%&nbsp;";
 		}
 	}
 
+	var fractick = (1 - (rate_timer / percent_time));
+
 	if (looping == false) {
-		document.getElementById("rumbling_oooo").style.opacity = Math.min(1, (ticks + (1 - (rate_timer / percent_time))) / 32);
+		document.getElementById("brainpower_bg").style.height = 5 * loading(ticks + fractick) + "px";
+		document.getElementById("brainpower_bg").style.opacity = (ticks + fractick) / 40;
+		document.getElementById("speed").innerHTML = "speed: " + loading(ticks + fractick).toFixed(1) + "%&nbsp;";
 	} else {
 		document.getElementById("brainpower_text").innerHTML = brainpower_text[ticks % 128];
+		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(1) + "%&nbsp;";
 	}
 
-	if (ticks % 4 < 2) {
-		var grad = 1 - (ticks % 4 + (1 - (rate_timer / percent_time))) / 2;
-		document.getElementById("rumbling_oooo").style.backgroundColor = "rgba(" +
-			grad * 255 + "," + grad * 255 + "," + grad * 255 + ", 1)";
+	// background
+	if (looping == false && ticks < 40) {
+		if (ticks % 4 < 2) {
+			var grad = 1 - (ticks % 4 + fractick) / 2;
+			var rgb = Math.floor(grad * 128) + 127;
+			document.getElementById("brainpower_bg").style.backgroundColor = "rgba(" +
+				rgb + "," + rgb + "," + rgb + ", 1)";
+		}
+		document.getElementById("brainpower_text").style.color = "black";
+		document.getElementById("brainpower_text").innerHTML = "LOAD ING";
+	} else if (looping == false && ticks < 48) {
+		if (ticks % 2 < 1) {
+			var grad = 1 - fractick;
+			var rgb = Math.floor(grad * 192) + 63;
+			document.getElementById("brainpower_bg").style.backgroundColor = "rgba(" +
+				rgb + "," + rgb + "," + rgb + ", 1)";
+		}
+		document.getElementById("brainpower_text").innerHTML = "HERE W E G O";
+	} else if (looping == false) {
+		var grad = 1 - (fractick * 2 - Math.floor(fractick * 2)) / 2;
+		var rgb = Math.floor(grad * 255);
+		document.getElementById("brainpower_bg").style.backgroundColor = "rgba(" +
+			rgb + "," + rgb + "," + rgb + ", 1)";
+		document.getElementById("brainpower_text").innerHTML = "HERE W E G O";
+	} else {
+		document.getElementById("brainpower_text").style.top = "0px";
+		document.getElementById("brainpower_bg").style.backgroundColor = "black";
+		document.getElementById("brainpower_text").style.color = "white";
 	}
 
 	var rumble_rate = (rate - 1) * 10;
 
 	var offset_height = getComputedStyle(document.getElementById("brainpower_text")).height;
-	document.getElementById("brainpower_text").style.top = (rumble_rate - Math.random() * rumble_rate * 2) -
+	if (looping == false && ticks >= 40)
+		document.getElementById("brainpower_text").style.top = (rumble_rate - Math.random() * rumble_rate * 2) -
+		(parseInt(offset_height.slice(0, offset_height.length - 2)) / 2) + 240 + "px";
+	else
+		document.getElementById("brainpower_text").style.top = (rumble_rate - Math.random() * rumble_rate * 2) -
 		(parseInt(offset_height.slice(0, offset_height.length - 2)) / 2) + 250 + "px";
 	document.getElementById("brainpower_text").style.left = (rumble_rate - Math.random() * rumble_rate * 2) + "px";
 

@@ -23,6 +23,13 @@ html, body {
 	line-height: 160px;
 }
 
+#brainpower_bg{
+	position: absolute;
+	background-color: white;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 
 
 @font-face {
