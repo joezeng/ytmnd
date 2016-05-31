@@ -85,13 +85,13 @@ function update() {
 			document.getElementById("brainpower_bg").style.backgroundColor = "rgba(" +
 				rgb + "," + rgb + "," + rgb + ", 1)";
 		}
-		document.getElementById("brainpower_text").innerHTML = "HERE W E G O";
+		document.getElementById("brainpower_text").innerHTML = "HERE W E GO";
 	} else if (looping == false) {
 		var grad = 1 - (fractick * 2 - Math.floor(fractick * 2)) / 2;
 		var rgb = Math.floor(grad * 255);
 		document.getElementById("brainpower_bg").style.backgroundColor = "rgba(" +
 			rgb + "," + rgb + "," + rgb + ", 1)";
-		document.getElementById("brainpower_text").innerHTML = "HERE W E G O";
+		document.getElementById("brainpower_text").innerHTML = "HERE W E GO";
 	} else {
 		document.getElementById("brainpower_text").style.top = "0px";
 		document.getElementById("brainpower_bg").style.backgroundColor = "black";
