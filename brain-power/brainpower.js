@@ -77,7 +77,7 @@ function update() {
 				rgb + "," + rgb + "," + rgb + ", 1)";
 		}
 		document.getElementById("brainpower_text").style.color = "black";
-		document.getElementById("brainpower_text").innerHTML = "LOAD ING";
+		document.getElementById("brainpower_text").innerHTML = "LOAD<br>ING";
 	} else if (looping == false && ticks < 48) {
 		if (ticks % 2 < 1) {
 			var grad = 1 - fractick;
@@ -85,13 +85,13 @@ function update() {
 			document.getElementById("brainpower_bg").style.backgroundColor = "rgba(" +
 				rgb + "," + rgb + "," + rgb + ", 1)";
 		}
-		document.getElementById("brainpower_text").innerHTML = "HERE W E GO";
+		document.getElementById("brainpower_text").innerHTML = "HERE<br>W E<br>GO";
 	} else if (looping == false) {
 		var grad = 1 - (fractick * 2 - Math.floor(fractick * 2)) / 2;
 		var rgb = Math.floor(grad * 255);
 		document.getElementById("brainpower_bg").style.backgroundColor = "rgba(" +
 			rgb + "," + rgb + "," + rgb + ", 1)";
-		document.getElementById("brainpower_text").innerHTML = "HERE W E GO";
+		document.getElementById("brainpower_text").innerHTML = "HERE<br>W E<br>GO";
 	} else {
 		document.getElementById("brainpower_text").style.top = "0px";
 		document.getElementById("brainpower_bg").style.backgroundColor = "black";
