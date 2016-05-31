@@ -1,24 +1,25 @@
 var intro = new Howl({
-	src: ["audio/brainpower_intro.mp3"],
+	src: ["audio/brainpower_intro.wav"],
 	loop: false,
 	onload: run,
 	onend: function() {
 		looping = true;
-		// reset the tick timer
-		ticks = 0;
+		// reset the tick timer, but advance it one tick
+		rate = 1.0005;
+		ticks = 1;
 		rate_timer = percent_time;
 		loop.play();
 	},
 });
 
 var loop = new Howl({
-	src: ["audio/brainpower_loop.mp3"],
+	src: ["audio/brainpower_loop.wav"],
 	loop: true,
 });
 
 
 var update_time = new Date();
-var percent_time = 60 / 172.8 / 4;
+var percent_time = 60 / 173 / 4;
 
 var ticks = 0;
 
@@ -234,7 +235,7 @@ var brainpower_text = [
 	"E",
 	"EE",
 	"EEE",
-	"EEE",
+	"EEEE",
 	"O",
 	"O",
 	"A",
