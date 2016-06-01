@@ -9,12 +9,12 @@ var intro = new Howl({
 		ticks = 1;
 		rate_timer = percent_time;
 		loop.play();
-	},
+	}
 });
 
 var loop = new Howl({
 	src: ["audio/brainpower_loop.wav"],
-	loop: true,
+	loop: true
 });
 
 
@@ -28,13 +28,23 @@ var looping = false;
 var rate = 1;
 var rate_timer = percent_time;
 
+var lang = "English";
 
+function change_lang(){
+	document.getElementById("lang_change").innerHTML = lang;
+	if(lang === "English"){
+		lang = "Japanese";
+	}else{
+		lang = "English"
+	}
+
+}
 
 function loading(ticks) {
 	if (ticks > 40) {
 		return 100;
 	} else {
-		var frac = ticks / 40
+		var frac = ticks / 40;
 		return (1 - Math.pow(1 - frac, 2)) * 100;
 	}
 }
@@ -64,7 +74,15 @@ function update() {
 		document.getElementById("brainpower_bg").style.opacity = (ticks + fractick) / 40;
 		document.getElementById("speed").innerHTML = "speed: " + loading(ticks + fractick).toFixed(1) + "%&nbsp;";
 	} else {
-		document.getElementById("brainpower_text").innerHTML = brainpower_text[ticks % 128];
+		if(lang === "English") {
+			document.getElementById("brainpower_text").classList.remove("brainpower_japanese");
+			document.getElementById("brainpower_text").innerHTML = brainpower_english_text[ticks % 128];
+
+		}
+		else{
+			document.getElementById("brainpower_text").classList.add("brainpower_japanese");
+			document.getElementById("brainpower_text").innerHTML = brainpower_japenese_text[ticks % 128];
+		}
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(1) + "%&nbsp;";
 	}
 
@@ -119,7 +137,7 @@ function run() {
 }
 
 
-var brainpower_text = [
+var brainpower_english_text = [
 	"<span style=\"font-size: 480px;\">O</span>",
 	"<span style=\"font-size: 480px;\">O</span>",
 	"<span style=\"font-size: 480px;\">O</span>",
@@ -247,5 +265,137 @@ var brainpower_text = [
 	"AAAA<br>A",
 	"AAAA<br>AA",
 	"AAAA<br>AAA",
-	"AAAA<br>AAAA",
-]
+	"AAAA<br>AAAA"
+];
+
+
+var brainpower_japenese_text = [
+	"<span style=\"font-size: 300px;\">お</span>",
+	"<span style=\"font-size: 300px;\">お</span>",
+	"<span style=\"font-size: 300px;\">お</span>",
+	"<span style=\"font-size: 300px;\">お</span>",
+	"お",
+	"おお",
+	"おおお",
+	"おおおお",
+	"おおおお<br>お",
+	"おおおお<br>おお",
+	"おおおお<br>おおお",
+	"おおおお<br>おおおお",
+	"おおおお<br>おおおお<br>お",
+	"おおおお<br>おおおお<br>おお",
+	"おおおお<br>おおおお<br>おおお",
+	"おおおお<br>おおおお<br>おおおお",
+	"あ",
+	"ああ",
+	"あああ",
+	"ああああ",
+	"え",
+	"え",
+	"あ&nbsp;",
+	"あ&nbsp;",
+	"&nbsp;あ",
+	"&nbsp;あ",
+	"い&nbsp;",
+	"い&nbsp;",
+	"&nbsp;あ",
+	"&nbsp;あ",
+	"う",
+	"う",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"お",
+	"おお",
+	"おおお",
+	"おおおお",
+	"おおおお<br>お",
+	"おおおお<br>おお",
+	"おおおお<br>おおお",
+	"おおおお<br>おおおお",
+	"おおおお<br>おおおお<br>お",
+	"おおおお<br>おおおお<br>おお",
+	"おおおお<br>おおおお<br>おおお",
+	"おおおお<br>おおおお<br>おおおお",
+	"あ",
+	"ああ",
+	"え",
+	"え",
+	"お",
+	"お",
+	"あ&nbsp;",
+	"あ&nbsp;",
+	"&nbsp;あ",
+	"&nbsp;あ",
+	"う&nbsp;",
+	"う&nbsp;",
+	"&nbsp;う",
+	"&nbsp;う",
+	"あ",
+	"あ",
+	"<span style=\"font-size: 300px;\">え</span>",
+	"<span style=\"font-size: 300px;\">え</span>",
+	"<span style=\"font-size: 300px;\">え</span>",
+	"<span style=\"font-size: 300px;\">え</span>",
+	"<span style=\"font-size: 300px;\">え</span>",
+	"<span style=\"font-size: 300px;\">え</span>",
+	"え",
+	"ええ",
+	"えええ",
+	"えええ",
+	"えええ<br>え",
+	"えええ<br>ええ",
+	"えええ<br>ええ",
+	"えええ<br>ええ<br>え",
+	"えええ<br>ええ<br>ええ",
+	"えええ<br>ええ<br>えええ",
+	"あ",
+	"ああ",
+	"あああ",
+	"ああああ",
+	"え",
+	"え",
+	"あ&nbsp;",
+	"あ&nbsp;",
+	"&nbsp;え",
+	"&nbsp;え",
+	"い&nbsp;",
+	"い&nbsp;",
+	"&nbsp;え",
+	"&nbsp;え",
+	"あ",
+	"あ",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 300px;\">じょ</span>",
+	"お",
+	"おお",
+	"おおお",
+	"おおお",
+	"おおお<br>お",
+	"おおお<br>おお",
+	"おおお<br>おお",
+	"おおお<br>おおお",
+	"おおお<br>おおお<br>お",
+	"おおお<br>おおお<br>お",
+	"おおお<br>おおお<br>おお",
+	"おおお<br>おおお<br>おおお",
+	"え",
+	"ええ",
+	"えええ",
+	"えええ",
+	"お",
+	"お",
+	"あ",
+	"あ",
+	"ああ",
+	"あああ",
+	"ああああ",
+	"ああああ",
+	"ああああ<br>あ",
+	"ああああ<br>ああ",
+	"ああああ<br>あああ",
+	"ああああ<br>ああああ"
+];
