@@ -12,6 +12,7 @@ html, body {
 #rumbling_oooo {
 	display: inline-block;
 	position: relative;
+	margin-top: 40px;
 	width: 500px;
 	height: 500px;
 	overflow: hidden;
@@ -40,3 +41,8 @@ html, body {
     font-family: 'Determination Sans';
     src: url('DeterminationMonoWeb.woff') format('woff');
 }
+
+a { text-decoration: none; color: #00ffff; }
+
+div#bottom_options { opacity: 0.3; font-size: 60%; transition: all 0.3s linear; }
+div#bottom_options:hover { opacity: 1; }

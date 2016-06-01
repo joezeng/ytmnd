@@ -35,9 +35,8 @@ function change_lang(){
 	if(lang === "English"){
 		lang = "Japanese";
 	}else{
-		lang = "English"
+		lang = "English";
 	}
-
 }
 
 function loading(ticks) {
@@ -74,14 +73,12 @@ function update() {
 		document.getElementById("brainpower_bg").style.opacity = (ticks + fractick) / 40;
 		document.getElementById("speed").innerHTML = "speed: " + loading(ticks + fractick).toFixed(1) + "%&nbsp;";
 	} else {
-		if(lang === "English") {
+		if (lang === "English") {
 			document.getElementById("brainpower_text").classList.remove("brainpower_japanese");
 			document.getElementById("brainpower_text").innerHTML = brainpower_english_text[ticks % 128];
-
-		}
-		else{
+		} else {
 			document.getElementById("brainpower_text").classList.add("brainpower_japanese");
-			document.getElementById("brainpower_text").innerHTML = brainpower_japenese_text[ticks % 128];
+			document.getElementById("brainpower_text").innerHTML = brainpower_japanese_text[ticks % 128];
 		}
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(1) + "%&nbsp;";
 	}
@@ -269,7 +266,7 @@ var brainpower_english_text = [
 ];
 
 
-var brainpower_japenese_text = [
+var brainpower_japanese_text = [
 	"<span style=\"font-size: 300px;\">お</span>",
 	"<span style=\"font-size: 300px;\">お</span>",
 	"<span style=\"font-size: 300px;\">お</span>",
@@ -292,20 +289,20 @@ var brainpower_japenese_text = [
 	"ああああ",
 	"え",
 	"え",
-	"あ&nbsp;",
-	"あ&nbsp;",
-	"&nbsp;あ",
-	"&nbsp;あ",
-	"い&nbsp;",
-	"い&nbsp;",
-	"&nbsp;あ",
-	"&nbsp;あ",
+	"あ　",
+	"あ　",
+	"　あ",
+	"　あ",
+	"い　",
+	"い　",
+	"　あ",
+	"　あ",
 	"う",
 	"う",
-	"<span style=\"font-size: 300px;\">じょ</span>",
-	"<span style=\"font-size: 300px;\">じょ</span>",
-	"<span style=\"font-size: 300px;\">じょ</span>",
-	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
 	"お",
 	"おお",
 	"おおお",
@@ -324,14 +321,14 @@ var brainpower_japenese_text = [
 	"え",
 	"お",
 	"お",
-	"あ&nbsp;",
-	"あ&nbsp;",
-	"&nbsp;あ",
-	"&nbsp;あ",
-	"う&nbsp;",
-	"う&nbsp;",
-	"&nbsp;う",
-	"&nbsp;う",
+	"あ　",
+	"あ　",
+	"　あ",
+	"　あ",
+	"う　",
+	"う　",
+	"　う",
+	"　う",
 	"あ",
 	"あ",
 	"<span style=\"font-size: 300px;\">え</span>",
@@ -356,20 +353,20 @@ var brainpower_japenese_text = [
 	"ああああ",
 	"え",
 	"え",
-	"あ&nbsp;",
-	"あ&nbsp;",
-	"&nbsp;え",
-	"&nbsp;え",
-	"い&nbsp;",
-	"い&nbsp;",
-	"&nbsp;え",
-	"&nbsp;え",
+	"あ　",
+	"あ　",
+	"　え",
+	"　え",
+	"い　",
+	"い　",
+	"　え",
+	"　え",
 	"あ",
 	"あ",
-	"<span style=\"font-size: 300px;\">じょ</span>",
-	"<span style=\"font-size: 300px;\">じょ</span>",
-	"<span style=\"font-size: 300px;\">じょ</span>",
-	"<span style=\"font-size: 300px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
+	"<span style=\"font-size: 250px;\">じょ</span>",
 	"お",
 	"おお",
 	"おおお",
