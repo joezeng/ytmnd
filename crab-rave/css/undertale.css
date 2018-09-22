@@ -9,40 +9,32 @@ html, body {
 	text-align: center;
 }
 
-#rumbling_oooo {
+#crab_rave {
 	display: inline-block;
 	position: relative;
 	margin-top: 40px;
-	width: 500px;
-	height: 500px;
+	width: 640px;
+	height: 320px;
 	overflow: hidden;
 }
 
-#brainpower_text{
-	position: relative;
-	font-size: 240px;
-	line-height: 160px;
-}
-
-.brainpower_japanese{
-	font-size: 120px !important;
-}
-
-#brainpower_bg{
+#gif {
 	position: absolute;
-	background-color: white;
+	top: 40px;
+	left: 0px
+}
+
+#caption {
+	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	top: 40px;
+	z-index: 4;
+	font-size: 60px;
+	text-shadow: 2px 2px black;
 }
-
 
 @font-face {
     font-family: 'Determination Sans';
     src: url('DeterminationMonoWeb.woff') format('woff');
 }
-
-a { text-decoration: none; color: #00ffff; }
-
-div#bottom_options { opacity: 0.3; font-size: 60%; transition: all 0.3s linear; }
-div#bottom_options:hover { opacity: 1; }

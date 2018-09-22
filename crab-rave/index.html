@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>CRAB RAVE</title>
+	<link rel="stylesheet" href="css/undertale.css" />
+	<script src="howler.js"></script>
+	<script src="crab-rave.js"></script>
+	<script src="https://cdn.rawgit.com/khalidsalomao/simple-query-string/22cc5bbe/src/simplequerystring.min.js"></script>
+</head>
+
+<body>
+
+	<div id="crab_rave">
+		<img id="gif" src="crab-rave.gif">
+		<p id="caption"></p>
+	</div>
+	<br>
+	<span id="speed">speed: 100%</span>
+
+	<script>
+		var caption = "CRAB RAVE";
+		var query = simpleQueryString.parse(window.location.search);
+		console.log(query);
+		if (query.caption) {
+			caption = query.caption;
+			document.getElementById("caption").innerText = query.caption;
+		}
+		document.title = caption;
+		run();
+	</script>
+
+</body>
+
+</html>
