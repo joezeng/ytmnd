@@ -21,7 +21,6 @@
 	<script>
 		var caption = "CRAB RAVE";
 		var query = simpleQueryString.parse(window.location.search);
-		console.log(query);
 		if (query.caption) {
 			caption = query.caption;
 			document.getElementById("caption").innerText = query.caption;
