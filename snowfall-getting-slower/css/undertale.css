@@ -1,0 +1,48 @@
+@import url("webfont.css");
+
+html, body {
+	background-color: black;
+	color: white;
+	font-family: "Determination Sans", Fixedsys, sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+}
+
+#bg {
+	display: inline-block;
+	width: 640px;
+	height: 440px;
+	margin-top: 20px;
+	overflow: hidden;
+	text-align: center;
+}
+
+a{
+	color: #00ffff;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #33cccc;
+}
+
+div.bottom-notice {
+	position: absolute;
+	bottom: 0.5em;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 50%;
+	opacity: 0.3;
+	transition: all 0.2s ease;
+}
+
+div.bottom-notice:hover {
+	opacity: 1;
+}
+
+@font-face {
+    font-family: 'Determination Sans';
+    src: url('DeterminationMonoWeb.woff') format('woff');
+}
